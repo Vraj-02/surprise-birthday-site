@@ -65,7 +65,7 @@ function Index() {
         </div>
 
         <p className="mt-8 text-sm text-muted-foreground">
-          Step 1 of 5 — buckle up bestie
+          Step 1 of 3 — buckle up bestie
         </p>
       </div>
     </main>

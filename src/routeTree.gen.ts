@@ -9,18 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Q4RouteImport } from './routes/q4'
 import { Route as Q3RouteImport } from './routes/q3'
 import { Route as Q2RouteImport } from './routes/q2'
 import { Route as Q1RouteImport } from './routes/q1'
 import { Route as BirthdayRouteImport } from './routes/birthday'
 import { Route as IndexRouteImport } from './routes/index'
 
-const Q4Route = Q4RouteImport.update({
-  id: '/q4',
-  path: '/q4',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const Q3Route = Q3RouteImport.update({
   id: '/q3',
   path: '/q3',
@@ -53,7 +47,6 @@ export interface FileRoutesByFullPath {
   '/q1': typeof Q1Route
   '/q2': typeof Q2Route
   '/q3': typeof Q3Route
-  '/q4': typeof Q4Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +54,6 @@ export interface FileRoutesByTo {
   '/q1': typeof Q1Route
   '/q2': typeof Q2Route
   '/q3': typeof Q3Route
-  '/q4': typeof Q4Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,14 +62,13 @@ export interface FileRoutesById {
   '/q1': typeof Q1Route
   '/q2': typeof Q2Route
   '/q3': typeof Q3Route
-  '/q4': typeof Q4Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/birthday' | '/q1' | '/q2' | '/q3' | '/q4'
+  fullPaths: '/' | '/birthday' | '/q1' | '/q2' | '/q3'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/birthday' | '/q1' | '/q2' | '/q3' | '/q4'
-  id: '__root__' | '/' | '/birthday' | '/q1' | '/q2' | '/q3' | '/q4'
+  to: '/' | '/birthday' | '/q1' | '/q2' | '/q3'
+  id: '__root__' | '/' | '/birthday' | '/q1' | '/q2' | '/q3'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -86,18 +77,10 @@ export interface RootRouteChildren {
   Q1Route: typeof Q1Route
   Q2Route: typeof Q2Route
   Q3Route: typeof Q3Route
-  Q4Route: typeof Q4Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/q4': {
-      id: '/q4'
-      path: '/q4'
-      fullPath: '/q4'
-      preLoaderRoute: typeof Q4RouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/q3': {
       id: '/q3'
       path: '/q3'
@@ -142,7 +125,6 @@ const rootRouteChildren: RootRouteChildren = {
   Q1Route: Q1Route,
   Q2Route: Q2Route,
   Q3Route: Q3Route,
-  Q4Route: Q4Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
