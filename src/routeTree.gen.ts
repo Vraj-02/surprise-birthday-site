@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Q4RouteImport } from './routes/q4'
+import { Route as Q3RouteImport } from './routes/q3'
+import { Route as Q2RouteImport } from './routes/q2'
+import { Route as Q1RouteImport } from './routes/q1'
+import { Route as BirthdayRouteImport } from './routes/birthday'
 import { Route as IndexRouteImport } from './routes/index'
 
+const Q4Route = Q4RouteImport.update({
+  id: '/q4',
+  path: '/q4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Q3Route = Q3RouteImport.update({
+  id: '/q3',
+  path: '/q3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Q2Route = Q2RouteImport.update({
+  id: '/q2',
+  path: '/q2',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Q1Route = Q1RouteImport.update({
+  id: '/q1',
+  path: '/q1',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BirthdayRoute = BirthdayRouteImport.update({
+  id: '/birthday',
+  path: '/birthday',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,83 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/birthday': typeof BirthdayRoute
+  '/q1': typeof Q1Route
+  '/q2': typeof Q2Route
+  '/q3': typeof Q3Route
+  '/q4': typeof Q4Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/birthday': typeof BirthdayRoute
+  '/q1': typeof Q1Route
+  '/q2': typeof Q2Route
+  '/q3': typeof Q3Route
+  '/q4': typeof Q4Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/birthday': typeof BirthdayRoute
+  '/q1': typeof Q1Route
+  '/q2': typeof Q2Route
+  '/q3': typeof Q3Route
+  '/q4': typeof Q4Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/birthday' | '/q1' | '/q2' | '/q3' | '/q4'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/birthday' | '/q1' | '/q2' | '/q3' | '/q4'
+  id: '__root__' | '/' | '/birthday' | '/q1' | '/q2' | '/q3' | '/q4'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BirthdayRoute: typeof BirthdayRoute
+  Q1Route: typeof Q1Route
+  Q2Route: typeof Q2Route
+  Q3Route: typeof Q3Route
+  Q4Route: typeof Q4Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/q4': {
+      id: '/q4'
+      path: '/q4'
+      fullPath: '/q4'
+      preLoaderRoute: typeof Q4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/q3': {
+      id: '/q3'
+      path: '/q3'
+      fullPath: '/q3'
+      preLoaderRoute: typeof Q3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/q2': {
+      id: '/q2'
+      path: '/q2'
+      fullPath: '/q2'
+      preLoaderRoute: typeof Q2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/q1': {
+      id: '/q1'
+      path: '/q1'
+      fullPath: '/q1'
+      preLoaderRoute: typeof Q1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/birthday': {
+      id: '/birthday'
+      path: '/birthday'
+      fullPath: '/birthday'
+      preLoaderRoute: typeof BirthdayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +138,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BirthdayRoute: BirthdayRoute,
+  Q1Route: Q1Route,
+  Q2Route: Q2Route,
+  Q3Route: Q3Route,
+  Q4Route: Q4Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
