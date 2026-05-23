@@ -5,7 +5,7 @@ export const Route = createFileRoute("/q1")({
   component: () => (
     <QuizPage
       step={1}
-      totalSteps={4}
+      totalSteps={3}
       emoji="🍔"
       question="You get hungry every 3 hours?"
       subtitle="(Be honest. Your snack drawer is the witness 🍫)"

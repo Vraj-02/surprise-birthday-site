@@ -5,12 +5,12 @@ export const Route = createFileRoute("/q3")({
   component: () => (
     <QuizPage
       step={3}
-      totalSteps={4}
-      emoji="🛌"
-      question="You said 'just 5 more minutes' and slept 2 more hours?"
-      subtitle="(This morning. Don't act new.)"
-      liePunchline="Your alarm has been snoozed 14 times this week. We counted."
-      nextRoute="/q4"
+      totalSteps={3}
+      emoji="📸"
+      question="You harass your friends until you get the photo you want?"
+      subtitle="(And after 50+ pics, you're still not satisfied 💅)"
+      liePunchline="Your friends have developed a full photographer portfolio just for you. Don't lie."
+      nextRoute="/birthday"
     />
   ),
 });

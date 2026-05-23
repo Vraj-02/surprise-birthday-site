@@ -5,11 +5,11 @@ export const Route = createFileRoute("/q2")({
   component: () => (
     <QuizPage
       step={2}
-      totalSteps={4}
-      emoji="📱"
-      question="You have 47+ unread WhatsApp messages right now?"
-      subtitle="(We'll wait while you check 👀)"
-      liePunchline="Open your phone. We DARE you to show the notification bar."
+      totalSteps={3}
+      emoji="🧠"
+      question="You cannot make a single decision by yourself?"
+      subtitle="(Even picking what to eat is a 30-minute meeting 😵‍💫)"
+      liePunchline="We've seen you use your full brain on food and STILL not decide what to eat. Try again."
       nextRoute="/q3"
     />
   ),
