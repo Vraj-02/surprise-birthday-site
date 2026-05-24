@@ -9,6 +9,7 @@ interface QuizPageProps {
   emoji: string;
   liePunchline: string;
   nextRoute: string;
+  noButtonText?: string;
   floatingEmojis?: string[];
 }
 
