@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Birthday" },
+      { name: "description", content: "Birthday Bash Builder creates personalized, interactive websites for birthday celebrations." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Birthday" },
+      { property: "og:description", content: "Birthday Bash Builder creates personalized, interactive websites for birthday celebrations." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Birthday" },
+      { name: "twitter:description", content: "Birthday Bash Builder creates personalized, interactive websites for birthday celebrations." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7f35891c-c1a1-479d-a7c7-45a6a4af2d88/id-preview-47038e57--39e72474-3f17-4e7d-bfd1-11c338d581fc.lovable.app-1779618550058.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7f35891c-c1a1-479d-a7c7-45a6a4af2d88/id-preview-47038e57--39e72474-3f17-4e7d-bfd1-11c338d581fc.lovable.app-1779618550058.png" },
     ],
     links: [
       {
