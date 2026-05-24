@@ -17,14 +17,30 @@ export const Route = createFileRoute("/birthday")({
   }),
 });
 
-const compliments = [
-  "Officially older. Still won't admit it. 👵✨",
-  "Aging like fine wine 🍷… that someone left in the sun.",
-  "Another year, another excuse to eat cake for breakfast 🎂",
-  "You're not old, you're a limited edition collectible 💅",
-  "Plot twist: you're the main character today 🌟",
-  "Warning: birthday girl may spontaneously start dancing 💃",
-  "Studies show: people born today are 100% iconic 📊",
+const roastLines = [
+  "That tickles. Stop.",
+  "Still clicking? I warned you.",
+  "Don't click again. I'm serious.",
+  "Your finger is getting a workout.",
+  "I'm just a cake. Why are you like this?",
+  "6 clicks. Your friends are watching.",
+  "The candles are infinite. Your dignity is not.",
+  "8 clicks deep. Is this your personality now?",
+  "I'm judging you. The cake is judging you.",
+  "10 clicks. NASA called. They want their patience back.",
+  "Don't. Click. Again. Please.",
+  "You clicked again. Of course you did.",
+  "13 is unlucky... for your free time.",
+  "At this point, I'm just a stress toy.",
+  "15 clicks. Your thumb has more endurance than you.",
+  "I'm literally pixels. Why are you still here?",
+  "17. The candles are filing a harassment complaint.",
+  "Still clicking? Go eat real cake.",
+  "19 clicks. Your WiFi is crying.",
+  "20. Even I'm tired of your nonsense.",
+  "21. The cake has filed for emotional damages.",
+  "22 clicks. You're one away from... nothing.",
+  "23. You won absolutely nothing. Happy Birthday.",
 ];
 
 const roastFacts = [
@@ -38,13 +54,14 @@ const roastFacts = [
 
 function Birthday() {
   const [count, setCount] = useState(0);
-  const [compliment, setCompliment] = useState(compliments[0]);
+  const [roastText, setRoastText] = useState(roastLines[0]);
   const [confetti, setConfetti] = useState<{ id: number; left: number; bg: string; delay: number }[]>([]);
 
   const blowCandle = () => {
+    if (count >= 23) return;
     const next = count + 1;
     setCount(next);
-    setCompliment(compliments[next % compliments.length]);
+    setRoastText(roastLines[Math.min(next, roastLines.length - 1)]);
     const colors = ["var(--confetti-1)", "var(--confetti-2)", "var(--confetti-3)", "var(--primary)", "var(--accent)"];
     const burst = Array.from({ length: 24 }, (_, i) => ({
       id: Date.now() + i,
@@ -119,7 +136,7 @@ function Birthday() {
             🎂
           </button>
           <p className="mt-6 font-[var(--font-fun)] text-2xl md:text-3xl text-primary animate-pop" key={count}>
-            {compliment}
+            {roastText}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">Candles blown: {count}</p>
         </div>
