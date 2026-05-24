@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import pic1 from "@/assets/pic1.jpeg";
+import pic2 from "@/assets/pic2.jpeg";
+import pic3 from "@/assets/pic3.jpeg";
+import pic4 from "@/assets/pic4.jpeg";
+import pic5 from "@/assets/pic5.jpeg";
+import pic6 from "@/assets/pic6.jpeg";
 
 export const Route = createFileRoute("/birthday")({
   component: Birthday,
@@ -120,37 +126,12 @@ function Birthday() {
       </section>
 
       <section className="relative z-10 mx-auto max-w-5xl px-6 pb-24">
-        <h2 className="text-center text-4xl md:text-5xl font-bold">
-          Things we love <span className="text-primary">(and lovingly judge)</span> about her
-        </h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {roastFacts.map((f, i) => (
-            <article
-              key={i}
-              className="rounded-2xl border-4 border-foreground/10 bg-card p-6 shadow-[6px_6px_0_0_var(--accent)] hover:translate-y-[-4px] hover:rotate-[-1deg] transition-transform"
-            >
-              <div className="text-5xl">{f.emoji}</div>
-              <h3 className="mt-3 text-xl font-bold">{f.title}</h3>
-              <p className="mt-2 text-muted-foreground">{f.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="relative z-10 mx-auto max-w-5xl px-6 pb-24">
         <h2 className="text-center text-4xl md:text-5xl font-bold">The official gallery 📸</h2>
         <p className="mt-2 text-center text-muted-foreground">
-          (Placeholder pics — swap them with embarrassing real ones later 😈)
+          (Certified iconic moments 😈)
         </p>
         <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-4">
-          {[
-            "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80",
-            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80",
-            "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600&q=80",
-            "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80",
-            "https://images.unsplash.com/photo-1496843916299-590492c751f4?w=600&q=80",
-            "https://images.unsplash.com/photo-1502233288067-04be1e1e9b14?w=600&q=80",
-          ].map((src, i) => (
+          {[pic1, pic2, pic3, pic4, pic5, pic6].map((src, i) => (
             <img
               key={i}
               src={src}
