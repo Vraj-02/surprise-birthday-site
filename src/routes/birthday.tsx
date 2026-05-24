@@ -136,7 +136,7 @@ function Birthday() {
             🎂
           </button>
           <p className="mt-6 font-[var(--font-fun)] text-2xl md:text-3xl text-primary animate-pop" key={count}>
-            {compliment}
+            {roastText}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">Candles blown: {count}</p>
         </div>
