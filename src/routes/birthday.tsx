@@ -54,13 +54,14 @@ const roastFacts = [
 
 function Birthday() {
   const [count, setCount] = useState(0);
-  const [compliment, setCompliment] = useState(compliments[0]);
+  const [roastText, setRoastText] = useState(roastLines[0]);
   const [confetti, setConfetti] = useState<{ id: number; left: number; bg: string; delay: number }[]>([]);
 
   const blowCandle = () => {
+    if (count >= 23) return;
     const next = count + 1;
     setCount(next);
-    setCompliment(compliments[next % compliments.length]);
+    setRoastText(roastLines[Math.min(next, roastLines.length - 1)]);
     const colors = ["var(--confetti-1)", "var(--confetti-2)", "var(--confetti-3)", "var(--primary)", "var(--accent)"];
     const burst = Array.from({ length: 24 }, (_, i) => ({
       id: Date.now() + i,
