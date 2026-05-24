@@ -10,6 +10,7 @@ export const Route = createFileRoute("/q1")({
       question="You get hungry every 3 hours?"
       subtitle="(Be honest. Your snack drawer is the witness 🍫)"
       liePunchline="We've literally seen you eat dinner at 5pm AND 9pm. Try again."
+      noButtonText="We have seen you get hungry every 3 hours"
       nextRoute="/q2"
     />
   ),
