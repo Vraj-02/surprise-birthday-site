@@ -78,7 +78,7 @@ export function QuizPage({
             onClick={handleNo}
             className="px-8 py-4 text-xl font-bold rounded-2xl bg-secondary text-secondary-foreground shadow-[6px_6px_0_0_var(--foreground)] hover:translate-y-[-3px] active:translate-y-0 transition-transform"
           >
-            {noButtonText}
+            No 🙅‍♀️
           </button>
         </div>
 
