@@ -21,6 +21,7 @@ export function QuizPage({
   emoji,
   liePunchline,
   nextRoute,
+  noButtonText = "No 🙅‍♀️",
   floatingEmojis = ["✨", "🎈", "🎂", "💖", "🦄", "🍰", "🎉", "🎁"],
 }: QuizPageProps) {
   const navigate = useNavigate();
